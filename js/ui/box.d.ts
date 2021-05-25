@@ -1,6 +1,6 @@
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    ComplexCollectionDataSource
+} from '../data/types';
 
 import {
     EventInfo,
@@ -66,7 +66,7 @@ export interface dxBoxOptions extends CollectionWidgetOptions<dxBox> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | dxBoxItem | any> | DataSource | DataSourceOptions;
+    dataSource?: ComplexCollectionDataSource<dxBoxItem>;
     /**
      * @docid
      * @type Enums.BoxDirection

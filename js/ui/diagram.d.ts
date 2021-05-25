@@ -6,10 +6,11 @@ import {
     template
 } from '../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import DataSource from '../data/data_source';
 
+import {
+    BaseMixinDataSource
+} from '../data/types';
 
 import {
   EventInfo,
@@ -551,7 +552,7 @@ export interface dxDiagramOptions extends WidgetOptions<dxDiagram> {
        * @prevFileNamespace DevExpress.ui
        * @default null
        */
-      dataSource?: Array<any> | DataSource | DataSourceOptions,
+      dataSource?: Array<any> | BaseMixinDataSource,
       /**
        * @docid
        * @prevFileNamespace DevExpress.ui
@@ -754,7 +755,7 @@ export interface dxDiagramOptions extends WidgetOptions<dxDiagram> {
        * @prevFileNamespace DevExpress.ui
        * @default null
        */
-      dataSource?: Array<any> | DataSource | DataSourceOptions,
+      dataSource?: Array<any> | BaseMixinDataSource,
       /**
        * @docid
        * @prevFileNamespace DevExpress.ui

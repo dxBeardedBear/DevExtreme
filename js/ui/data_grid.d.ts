@@ -12,11 +12,14 @@ import {
     template
 } from '../core/templates/template';
 
-import Store from '../data/abstract_store';
-
 import DataSource, {
     DataSourceOptions
 } from '../data/data_source';
+
+import {
+  DataSourceMixinArray,
+  DataSourceMixinString
+} from '../data/types';
 
 import {
     DxEvent,
@@ -578,7 +581,7 @@ export interface GridBaseOptions<TComponent extends GridBase> extends WidgetOpti
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<any> | DataSource | DataSourceOptions;
+    dataSource?: Array<any> | DataSourceMixinString;
     /**
      * @docid
      * @prevFileNamespace DevExpress.ui
@@ -2997,7 +3000,7 @@ export interface ColumnHeaderFilter {
    * @type_function_param1_field2 dataSource:DataSourceOptions
    * @default undefined
    */
-  dataSource?: Array<any> | ((options: { component?: any, dataSource?: DataSourceOptions }) => any) | DataSourceOptions,
+  dataSource?: DataSourceMixinArray | ((options: { component?: any, dataSource?: DataSourceOptions }) => any),
   /**
    * @docid GridBaseColumn.headerFilter.groupInterval
    * @prevFileNamespace DevExpress.ui
@@ -3039,10 +3042,10 @@ export interface ColumnLookup {
    * @type_function_param1 options:object
    * @type_function_param1_field1 data:object
    * @type_function_param1_field2 key:any
-   * @type_function_return Array<any>|DataSourceOptions|Store
+   * @type_function_return DataSourceMixinArray
    * @default undefined
    */
-  dataSource?: Array<any> | DataSourceOptions | Store | ((options: { data?: any, key?: any }) => Array<any> | DataSourceOptions | Store),
+  dataSource?: DataSourceMixinArray | ((options: { data?: any, key?: any }) => DataSourceMixinArray),
   /**
    * @docid GridBaseColumn.lookup.displayExpr
    * @prevFileNamespace DevExpress.ui

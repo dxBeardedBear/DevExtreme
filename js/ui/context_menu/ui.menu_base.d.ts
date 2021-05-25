@@ -2,9 +2,9 @@ import {
     animationConfig
 } from '../../animation/fx';
 
-import DataSource, {
-    DataSourceOptions
-} from '../../data/data_source';
+import {
+    DataSourceMixinString
+} from '../../data/types';
 
 import HierarchicalCollectionWidget, {
     HierarchicalCollectionWidgetOptions
@@ -57,7 +57,7 @@ export interface dxMenuBaseOptions<TComponent> extends HierarchicalCollectionWid
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<dxMenuBaseItem> | DataSource | DataSourceOptions;
+    dataSource?: Array<dxMenuBaseItem> | DataSourceMixinString;
     /**
      * @docid
      * @prevFileNamespace DevExpress.ui

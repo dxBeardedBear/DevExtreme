@@ -11,9 +11,9 @@ import {
     DxPromise
 } from '../core/utils/deferred';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    ComplexCollectionDataSource
+} from '../data/types';
 
 import {
     EventInfo,
@@ -89,7 +89,7 @@ export interface dxSlideOutOptions extends CollectionWidgetOptions<dxSlideOut> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | dxSlideOutItem | any> | DataSource | DataSourceOptions;
+    dataSource?: ComplexCollectionDataSource<dxSlideOutItem>;
     /**
      * @docid
      * @fires dxSlideOutOptions.onOptionChanged

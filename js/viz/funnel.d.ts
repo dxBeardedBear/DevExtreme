@@ -12,9 +12,11 @@ import {
     template
 } from '../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import DataSource from '../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     Cancelable,
@@ -159,7 +161,7 @@ export interface dxFunnelOptions extends BaseWidgetOptions<dxFunnel> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    dataSource?: Array<any> | DataSource | DataSourceOptions | string;
+    dataSource?: Array<any> | DataSourceMixinString;
     /**
      * @docid
      * @default true

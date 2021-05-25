@@ -7,9 +7,11 @@ import {
     template
 } from '../../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../../data/data_source';
+import DataSource from '../../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../../data/types';
 
 import {
     EventInfo,
@@ -34,7 +36,7 @@ export interface CollectionWidgetOptions<TComponent> extends WidgetOptions<TComp
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | CollectionWidgetItem> | DataSource | DataSourceOptions;
+    dataSource?: Array<string | CollectionWidgetItem> | DataSourceMixinString;
     /**
      * @docid
      * @default 750

@@ -10,9 +10,9 @@ import {
     DxPromise
 } from '../core/utils/deferred';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     DxEvent,
@@ -97,7 +97,7 @@ export interface dxContextMenuOptions extends dxMenuBaseOptions<dxContextMenu> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<dxContextMenuItem> | DataSource | DataSourceOptions;
+    dataSource?: Array<dxContextMenuItem> | DataSourceMixinString;
     /**
      * @docid
      * @prevFileNamespace DevExpress.ui

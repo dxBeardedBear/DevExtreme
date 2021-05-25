@@ -12,9 +12,11 @@ import {
     template
 } from '../../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../../data/data_source';
+import DataSource from '../../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../../data/types';
 
 import {
     EventInfo,
@@ -116,7 +118,7 @@ export interface BaseChartOptions<TComponent> extends BaseWidgetOptions<TCompone
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    dataSource?: Array<any> | DataSource | DataSourceOptions | string;
+    dataSource?: Array<any> | DataSourceMixinString;
     /**
      * @docid
      * @inherits BaseLegend

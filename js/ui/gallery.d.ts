@@ -2,9 +2,9 @@ import {
     DxPromise
 } from '../core/utils/deferred';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    ComplexCollectionDataSource
+} from '../data/types';
 
 import {
     EventInfo,
@@ -72,7 +72,7 @@ export interface dxGalleryOptions extends CollectionWidgetOptions<dxGallery> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | dxGalleryItem | any> | DataSource | DataSourceOptions;
+    dataSource?: ComplexCollectionDataSource<dxGalleryItem>;
     /**
      * @docid
      * @default true [for](desktop)

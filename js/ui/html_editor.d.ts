@@ -7,9 +7,10 @@ import {
     template
 } from '../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    BaseMixinDataSource,
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     EventInfo,
@@ -431,7 +432,7 @@ export interface dxHtmlEditorMention {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: Array<string> | DataSource | DataSourceOptions;
+    dataSource?: Array<string> | BaseMixinDataSource;
     /**
      * @docid
      * @default "this"
@@ -572,7 +573,7 @@ export interface dxHtmlEditorVariables {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string> | DataSource | DataSourceOptions;
+    dataSource?: Array<string> | DataSourceMixinString;
     /**
      * @docid
      * @default ""

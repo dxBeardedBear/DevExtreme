@@ -7,9 +7,11 @@ import {
     template
 } from '../../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../../data/data_source';
+import DataSource from '../../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../../data/types';
 
 import {
     CollectionWidgetItem
@@ -23,7 +25,7 @@ export interface DataExpressionMixinOptions<T = DataExpressionMixin> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<CollectionWidgetItem | any> | DataSource | DataSourceOptions;
+    dataSource?: Array<CollectionWidgetItem | any> | DataSourceMixinString;
     /**
      * @docid
      * @default undefined

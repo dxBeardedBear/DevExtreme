@@ -2,9 +2,9 @@ import {
     DxElement
 } from '../core/element';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     Cancelable,
@@ -86,7 +86,7 @@ export interface dxMenuOptions extends dxMenuBaseOptions<dxMenu> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<dxMenuItem> | DataSource | DataSourceOptions;
+    dataSource?: Array<dxMenuItem> | DataSourceMixinString;
     /**
      * @docid
      * @default false

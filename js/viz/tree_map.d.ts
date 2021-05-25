@@ -12,9 +12,11 @@ import {
     template
 } from '../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import DataSource from '../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     Cancelable,
@@ -161,7 +163,7 @@ export interface dxTreeMapOptions extends BaseWidgetOptions<dxTreeMap> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    dataSource?: Array<any> | DataSource | DataSourceOptions | string;
+    dataSource?: Array<any> | DataSourceMixinString;
     /**
      * @docid
      * @prevFileNamespace DevExpress.viz

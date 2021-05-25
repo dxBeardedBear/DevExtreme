@@ -7,9 +7,11 @@ import {
     template
 } from '../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import DataSource  from '../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     EventInfo,
@@ -125,7 +127,7 @@ export interface dxDropDownBoxOptions extends DataExpressionMixinOptions<dxDropD
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<any> | DataSource | DataSourceOptions;
+    dataSource?: Array<any> | DataSourceMixinString;
     /**
      * @docid
      * @type_function_param1 value:string|Array<any>

@@ -3,9 +3,11 @@ import {
     PaletteExtensionModeType
 } from './palette';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import DataSource from '../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     Cancelable,
@@ -345,7 +347,7 @@ export interface dxRangeSelectorOptions extends BaseWidgetOptions<dxRangeSelecto
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    dataSource?: Array<any> | DataSource | DataSourceOptions | string;
+    dataSource?: Array<any> | DataSourceMixinString;
     /**
      * @docid
      * @default 'arg'

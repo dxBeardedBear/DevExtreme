@@ -12,9 +12,9 @@ import {
     ChangedOptionInfo
 } from '../events/index';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    BaseMixinDataSource
+} from '../data/types';
 
 import {
     dxTreeListColumn
@@ -266,7 +266,7 @@ export interface dxGanttOptions extends WidgetOptions<dxGantt> {
        * @prevFileNamespace DevExpress.ui
        * @default null
        */
-      dataSource?: Array<any> | DataSource | DataSourceOptions,
+      dataSource?: Array<any> | BaseMixinDataSource,
       /**
        * @docid
        * @prevFileNamespace DevExpress.ui
@@ -768,7 +768,7 @@ export interface dxGanttOptions extends WidgetOptions<dxGantt> {
        * @prevFileNamespace DevExpress.ui
        * @default null
        */
-      dataSource?: Array<any> | DataSource | DataSourceOptions,
+      dataSource?: Array<any> | BaseMixinDataSource,
       /**
        * @docid
        * @prevFileNamespace DevExpress.ui
@@ -806,7 +806,7 @@ export interface dxGanttOptions extends WidgetOptions<dxGantt> {
        * @prevFileNamespace DevExpress.ui
        * @default null
        */
-      dataSource?: Array<any> | DataSource | DataSourceOptions,
+      dataSource?: Array<any> | BaseMixinDataSource,
       /**
        * @docid
        * @prevFileNamespace DevExpress.ui
@@ -890,7 +890,7 @@ export interface dxGanttOptions extends WidgetOptions<dxGantt> {
        * @prevFileNamespace DevExpress.ui
        * @default null
        */
-      dataSource?: Array<any> | DataSource | DataSourceOptions,
+      dataSource?: Array<any> | BaseMixinDataSource,
       /**
        * @docid
        * @prevFileNamespace DevExpress.ui

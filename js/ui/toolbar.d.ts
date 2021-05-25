@@ -7,9 +7,9 @@ import {
     template
 } from '../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    ComplexCollectionDataSource
+} from '../data/types';
 
 import {
     EventInfo,
@@ -59,7 +59,7 @@ export interface dxToolbarOptions extends CollectionWidgetOptions<dxToolbar> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | dxToolbarItem | any> | DataSource | DataSourceOptions;
+    dataSource?: ComplexCollectionDataSource<dxToolbarItem>;
     /**
      * @docid
      * @fires dxToolbarOptions.onOptionChanged

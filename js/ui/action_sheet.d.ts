@@ -7,9 +7,9 @@ import {
     DxPromise
 } from '../core/utils/deferred';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    ComplexCollectionDataSource
+} from '../data/types';
 
 import {
     DxEvent,
@@ -71,7 +71,7 @@ export interface dxActionSheetOptions extends CollectionWidgetOptions<dxActionSh
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | dxActionSheetItem | any> | DataSource | DataSourceOptions;
+    dataSource?: ComplexCollectionDataSource<dxActionSheetItem>;
     /**
      * @docid
      * @fires dxActionSheetOptions.onOptionChanged

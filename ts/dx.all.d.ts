@@ -1447,6 +1447,14 @@ declare module DevExpress.data {
    */
   export function base64_encode(input: string | Array<number>): string;
   /**
+   * [descr:BaseMixinDataSource]
+   */
+  export type BaseMixinDataSource = Store | DataSource | DataSourceOptions;
+  /**
+   * [descr:ComplexCollectionDataSource]
+   */
+  export type ComplexCollectionDataSource<T> = Array<string | T | any> | DataSourceMixinString;
+  /**
    * [descr:CustomStore]
    */
   export class CustomStore extends Store {
@@ -1661,6 +1669,10 @@ declare module DevExpress.data {
      */
     totalCount(): number;
   }
+  /**
+   * [descr:DataSourceMixinArray]
+   */
+  export type DataSourceMixinArray = Array<any> | Store | DataSourceOptions;
   /**
    * @deprecated Warning! This type is used for internal purposes. Do not import it directly.
    */
@@ -1877,6 +1889,10 @@ declare module DevExpress.data {
      */
     name?: string;
   }
+  /**
+   * [descr:DataSourceMixinString]
+   */
+  export type DataSourceMixinString = string | BaseMixinDataSource;
   /**
    * [descr:ODataContext]
    */
@@ -3772,10 +3788,8 @@ declare module DevExpress.ui {
      * [descr:CollectionWidgetOptions.dataSource]
      */
     dataSource?:
-      | string
       | Array<string | CollectionWidgetItem>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+      | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:CollectionWidgetOptions.itemHoldTimeout]
      */
@@ -3962,10 +3976,8 @@ declare module DevExpress.ui {
      * [descr:DataExpressionMixinOptions.dataSource]
      */
     dataSource?:
-      | string
       | Array<CollectionWidgetItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+      | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:DataExpressionMixinOptions.displayExpr]
      */
@@ -4129,11 +4141,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxAccordionOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxAccordionItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxAccordionItem>;
     /**
      * [descr:dxAccordionOptions.deferRendering]
      */
@@ -4272,11 +4280,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxActionSheetOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxActionSheetItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxActionSheetItem>;
     /**
      * [descr:dxActionSheetOptions.items]
      */
@@ -4442,11 +4446,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxBoxOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxBoxItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxBoxItem>;
     /**
      * [descr:dxBoxOptions.direction]
      */
@@ -4917,11 +4917,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxContextMenuOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<dxContextMenuItem>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: Array<dxContextMenuItem> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxContextMenuOptions.items]
      */
@@ -5741,12 +5737,11 @@ declare module DevExpress.ui {
        * [descr:GridBaseColumn.headerFilter.dataSource]
        */
       dataSource?:
-        | Array<any>
+        | DevExpress.data.DataSourceMixinArray
         | ((options: {
             component?: any;
             dataSource?: DevExpress.data.DataSourceOptions;
-          }) => any)
-        | DevExpress.data.DataSourceOptions;
+          }) => any);
       /**
        * [descr:GridBaseColumn.headerFilter.groupInterval]
        */
@@ -5781,16 +5776,8 @@ declare module DevExpress.ui {
        * [descr:GridBaseColumn.lookup.dataSource]
        */
       dataSource?:
-        | Array<any>
-        | DevExpress.data.DataSourceOptions
-        | DevExpress.data.Store
-        | ((options: {
-            data?: any;
-            key?: any;
-          }) =>
-            | Array<any>
-            | DevExpress.data.DataSourceOptions
-            | DevExpress.data.Store);
+        | DevExpress.data.DataSourceMixinArray
+        | ((options: { data?: any; key?: any }) => DataSourceMixinArray);
       /**
        * [descr:GridBaseColumn.lookup.displayExpr]
        */
@@ -8524,10 +8511,7 @@ declare module DevExpress.ui {
       /**
        * [descr:dxDiagramOptions.edges.dataSource]
        */
-      dataSource?:
-        | Array<any>
-        | DevExpress.data.DataSource
-        | DevExpress.data.DataSourceOptions;
+      dataSource?: Array<any> | DevExpress.data.BaseMixinDataSource;
       /**
        * [descr:dxDiagramOptions.edges.fromExpr]
        */
@@ -8658,10 +8642,7 @@ declare module DevExpress.ui {
       /**
        * [descr:dxDiagramOptions.nodes.dataSource]
        */
-      dataSource?:
-        | Array<any>
-        | DevExpress.data.DataSource
-        | DevExpress.data.DataSourceOptions;
+      dataSource?: Array<any> | DevExpress.data.BaseMixinDataSource;
       /**
        * [descr:dxDiagramOptions.nodes.heightExpr]
        */
@@ -9623,11 +9604,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxDropDownBoxOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: Array<any> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxDropDownBoxOptions.displayValueFormatter]
      */
@@ -9733,10 +9710,8 @@ declare module DevExpress.ui {
      * [descr:dxDropDownButtonOptions.dataSource]
      */
     dataSource?:
-      | string
       | Array<dxDropDownButtonItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+      | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxDropDownButtonOptions.deferRendering]
      */
@@ -11005,10 +10980,7 @@ declare module DevExpress.ui {
       /**
        * [descr:dxFilterBuilderField.lookup.dataSource]
        */
-      dataSource?:
-        | Array<any>
-        | DevExpress.data.DataSourceOptions
-        | DevExpress.data.Store;
+      dataSource?: DevExpress.data.DataSourceMixinArray;
       /**
        * [descr:dxFilterBuilderField.lookup.displayExpr]
        */
@@ -11753,11 +11725,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxGalleryOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxGalleryItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxGalleryItem>;
     /**
      * [descr:dxGalleryOptions.focusStateEnabled]
      */
@@ -12122,10 +12090,7 @@ declare module DevExpress.ui {
       /**
        * [descr:dxGanttOptions.dependencies.dataSource]
        */
-      dataSource?:
-        | Array<any>
-        | DevExpress.data.DataSource
-        | DevExpress.data.DataSourceOptions;
+      dataSource?: Array<any> | DevExpress.data.BaseMixinDataSource;
       /**
        * [descr:dxGanttOptions.dependencies.keyExpr]
        */
@@ -12342,10 +12307,7 @@ declare module DevExpress.ui {
       /**
        * [descr:dxGanttOptions.resourceAssignments.dataSource]
        */
-      dataSource?:
-        | Array<any>
-        | DevExpress.data.DataSource
-        | DevExpress.data.DataSourceOptions;
+      dataSource?: Array<any> | DevExpress.data.BaseMixinDataSource;
       /**
        * [descr:dxGanttOptions.resourceAssignments.keyExpr]
        */
@@ -12370,10 +12332,7 @@ declare module DevExpress.ui {
       /**
        * [descr:dxGanttOptions.resources.dataSource]
        */
-      dataSource?:
-        | Array<any>
-        | DevExpress.data.DataSource
-        | DevExpress.data.DataSourceOptions;
+      dataSource?: Array<any> | DevExpress.data.BaseMixinDataSource;
       /**
        * [descr:dxGanttOptions.resources.keyExpr]
        */
@@ -12430,10 +12389,7 @@ declare module DevExpress.ui {
       /**
        * [descr:dxGanttOptions.tasks.dataSource]
        */
-      dataSource?:
-        | Array<any>
-        | DevExpress.data.DataSource
-        | DevExpress.data.DataSourceOptions;
+      dataSource?: Array<any> | DevExpress.data.BaseMixinDataSource;
       /**
        * [descr:dxGanttOptions.tasks.endExpr]
        */
@@ -12817,10 +12773,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxHtmlEditorMention.dataSource]
      */
-    dataSource?:
-      | Array<string>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: Array<string> | DevExpress.data.BaseMixinDataSource;
     /**
      * [descr:dxHtmlEditorMention.displayExpr]
      */
@@ -13038,11 +12991,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxHtmlEditorVariables.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: Array<string> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxHtmlEditorVariables.escapeChar]
      */
@@ -13258,11 +13207,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxListOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxListItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxListItem>;
     /**
      * [descr:dxListOptions.displayExpr]
      */
@@ -14144,11 +14089,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxMenuBaseOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<dxMenuBaseItem>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: Array<dxMenuBaseItem> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxMenuBaseOptions.items]
      */
@@ -14211,11 +14152,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxMenuOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<dxMenuItem>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: Array<dxMenuItem> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxMenuOptions.hideSubmenuOnMouseLeave]
      */
@@ -14323,11 +14260,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxMultiViewOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxMultiViewItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxMultiViewItem>;
     /**
      * [descr:dxMultiViewOptions.deferRendering]
      */
@@ -16016,11 +15949,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxResponsiveBoxOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxResponsiveBoxItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxResponsiveBoxItem>;
     /**
      * [descr:dxResponsiveBoxOptions.height]
      */
@@ -16442,11 +16371,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxSchedulerOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<dxSchedulerAppointment>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: Array<dxSchedulerAppointment> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxSchedulerOptions.dateCellTemplate]
      */
@@ -16679,11 +16604,7 @@ declare module DevExpress.ui {
       /**
        * [descr:dxSchedulerOptions.resources.dataSource]
        */
-      dataSource?:
-        | string
-        | Array<any>
-        | DevExpress.data.DataSource
-        | DevExpress.data.DataSourceOptions;
+      dataSource?: Array<any> | DevExpress.data.DataSourceMixinString;
       /**
        * [descr:dxSchedulerOptions.resources.displayExpr]
        */
@@ -17276,11 +17197,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxSlideOutOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxSlideOutItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxSlideOutItem>;
     /**
      * [descr:dxSlideOutOptions.items]
      */
@@ -17853,11 +17770,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxTabPanelOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxTabPanelItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxTabPanelItem>;
     /**
      * [descr:dxTabPanelOptions.hoverStateEnabled]
      */
@@ -17959,11 +17872,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxTabsOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxTabsItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxTabsItem>;
     /**
      * [descr:dxTabsOptions.focusStateEnabled]
      */
@@ -18445,11 +18354,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxTileViewOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxTileViewItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxTileViewItem>;
     /**
      * [descr:dxTileViewOptions.direction]
      */
@@ -18645,11 +18550,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxToolbarOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<string | dxToolbarItem | any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: DevExpress.data.ComplexCollectionDataSource<dxToolbarItem>;
     /**
      * [descr:dxToolbarOptions.items]
      */
@@ -19859,11 +19760,7 @@ declare module DevExpress.ui {
     /**
      * [descr:dxTreeViewOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<dxTreeViewItem>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: Array<dxTreeViewItem> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxTreeViewOptions.dataStructure]
      */
@@ -20736,11 +20633,7 @@ declare module DevExpress.ui {
     /**
      * [descr:GridBaseOptions.dataSource]
      */
-    dataSource?:
-      | string
-      | Array<any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions;
+    dataSource?: Array<any> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:GridBaseOptions.dateSerializationFormat]
      */
@@ -21612,11 +21505,7 @@ declare module DevExpress.viz {
     /**
      * [descr:BaseChartOptions.dataSource]
      */
-    dataSource?:
-      | Array<any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions
-      | string;
+    dataSource?: Array<any> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:BaseChartOptions.legend]
      */
@@ -27545,11 +27434,7 @@ declare module DevExpress.viz {
     /**
      * [descr:dxFunnelOptions.dataSource]
      */
-    dataSource?:
-      | Array<any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions
-      | string;
+    dataSource?: Array<any> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxFunnelOptions.hoverEnabled]
      */
@@ -30324,11 +30209,7 @@ declare module DevExpress.viz {
     /**
      * [descr:dxRangeSelectorOptions.dataSource]
      */
-    dataSource?:
-      | Array<any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions
-      | string;
+    dataSource?: Array<any> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxRangeSelectorOptions.dataSourceField]
      */
@@ -30834,11 +30715,7 @@ declare module DevExpress.viz {
     /**
      * [descr:dxSankeyOptions.dataSource]
      */
-    dataSource?:
-      | Array<any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions
-      | string;
+    dataSource?: Array<any> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxSankeyOptions.hoverEnabled]
      */
@@ -31231,11 +31108,7 @@ declare module DevExpress.viz {
     /**
      * [descr:dxSparklineOptions.dataSource]
      */
-    dataSource?:
-      | Array<any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions
-      | string;
+    dataSource?: Array<any> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxSparklineOptions.firstLastColor]
      */
@@ -31514,11 +31387,7 @@ declare module DevExpress.viz {
     /**
      * [descr:dxTreeMapOptions.dataSource]
      */
-    dataSource?:
-      | Array<any>
-      | DevExpress.data.DataSource
-      | DevExpress.data.DataSourceOptions
-      | string;
+    dataSource?: Array<any> | DevExpress.data.DataSourceMixinString;
     /**
      * [descr:dxTreeMapOptions.group]
      */
@@ -32119,11 +31988,7 @@ declare module DevExpress.viz {
           /**
            * [descr:dxVectorMapOptions.layers.dataSource]
            */
-          dataSource?:
-            | any
-            | DevExpress.data.DataSource
-            | DevExpress.data.DataSourceOptions
-            | string;
+          dataSource?: any | DevExpress.data.DataSourceMixinString;
           /**
            * [descr:dxVectorMapOptions.layers.elementType]
            */
@@ -32230,11 +32095,7 @@ declare module DevExpress.viz {
           colorGroups?: Array<number>;
           customize?: (elements: Array<MapLayerElement>) => any;
           dataField?: string;
-          dataSource?:
-            | any
-            | DevExpress.data.DataSource
-            | DevExpress.data.DataSourceOptions
-            | string;
+          dataSource?: any | DevExpress.data.DataSourceMixinString;
           elementType?: 'bubble' | 'dot' | 'image' | 'pie';
           hoverEnabled?: boolean;
           hoveredBorderColor?: string;

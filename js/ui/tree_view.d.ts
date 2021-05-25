@@ -6,9 +6,9 @@ import {
     DxPromise
 } from '../core/utils/deferred';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     EventInfo,
@@ -131,7 +131,7 @@ export interface dxTreeViewOptions extends HierarchicalCollectionWidgetOptions<d
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<dxTreeViewItem> | DataSource | DataSourceOptions;
+    dataSource?: Array<dxTreeViewItem> | DataSourceMixinString;
     /**
      * @docid
      * @type Enums.TreeViewDataStructure

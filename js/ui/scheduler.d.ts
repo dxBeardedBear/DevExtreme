@@ -9,9 +9,11 @@ import {
     template
 } from '../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import DataSource from '../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     DxEvent,
@@ -390,7 +392,7 @@ export interface dxSchedulerOptions extends WidgetOptions<dxScheduler> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<dxSchedulerAppointment> | DataSource | DataSourceOptions;
+    dataSource?: Array<dxSchedulerAppointment> | DataSourceMixinString;
     /**
      * @docid
      * @extends DateCellTemplate
@@ -820,7 +822,7 @@ export interface dxSchedulerOptions extends WidgetOptions<dxScheduler> {
        * @prevFileNamespace DevExpress.ui
        * @default null
        */
-      dataSource?: string | Array<any> | DataSource | DataSourceOptions,
+      dataSource?: Array<any> | DataSourceMixinString,
       /**
        * @docid
        * @prevFileNamespace DevExpress.ui

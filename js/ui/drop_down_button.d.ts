@@ -12,8 +12,12 @@ import {
 } from '../core/templates/template';
 
 import DataSource, {
-    DataSourceOptions
+    DataSourceOptions,
 } from '../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 import {
     DxEvent,
@@ -75,7 +79,7 @@ export interface dxDropDownButtonOptions extends WidgetOptions<dxDropDownButton>
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<dxDropDownButtonItem | any> | DataSource | DataSourceOptions;
+    dataSource?: Array<dxDropDownButtonItem | any> | DataSourceMixinString;
     /**
      * @docid
      * @default true

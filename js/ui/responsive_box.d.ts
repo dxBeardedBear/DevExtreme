@@ -1,6 +1,6 @@
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+  ComplexCollectionDataSource
+} from '../data/types';
 
 import {
   EventInfo,
@@ -82,7 +82,7 @@ export interface dxResponsiveBoxOptions extends CollectionWidgetOptions<dxRespon
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | dxResponsiveBoxItem | any> | DataSource | DataSourceOptions;
+    dataSource?:  ComplexCollectionDataSource<dxResponsiveBoxItem>;
     /**
      * @docid
      * @type_function_return number|string

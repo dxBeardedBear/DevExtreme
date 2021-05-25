@@ -74,8 +74,8 @@ import type { dxFilterBuilderOptions } from '../../../../../ui/filter_builder';
 import { DxPromise } from '../../../../../core/utils/deferred'; // eslint-disable-line import/named
 import type { UserDefinedElement, DxElement } from '../../../../../core/element'; // eslint-disable-line import/named
 import type { template } from '../../../../../core/templates/template';
-import DataSource from '../../../../../data/data_source';
 import type { DataSourceOptions } from '../../../../../data/data_source';
+import type { DataSourceMixinArray, DataSourceMixinString } from '../../../../../data/types';
 import type { Properties as PopupProperties } from '../../../../../ui/popup';
 import type {
   RequiredRule,
@@ -91,7 +91,6 @@ import type {
 } from '../../../../../ui/validation_rules';
 import type { format } from '../../../../../ui/widget/ui.widget';
 import type { dxFormSimpleItem, dxFormOptions } from '../../../../../ui/form';
-import type Store from '../../../../../data/abstract_store';
 import messageLocalization from '../../../../../localization/message';
 
 @ComponentBindings()
@@ -128,9 +127,8 @@ export class DataGridColumnHeaderFilter {
 
   @OneWay()
   dataSource?:
-  | any[]
-  | ((options: { component?: any; dataSource?: DataSourceOptions }) => any)
-  | DataSourceOptions;
+  | DataSourceMixinArray
+  | ((options: { component?: any; dataSource?: DataSourceOptions }) => any);
 
   @OneWay()
   groupInterval?: 'day' | 'hour' | 'minute' | 'month' | 'quarter' | 'second' | 'year' | number;
@@ -152,10 +150,8 @@ export class DataGridColumnLookup {
 
   @OneWay()
   dataSource?:
-  | any[]
-  | DataSourceOptions
-  | Store
-  | ((options: { data?: any; key?: any }) => any[] | DataSourceOptions | Store);
+  | DataSourceMixinArray
+  | ((options: { data?: any; key?: any }) => DataSourceMixinArray);
 
   @OneWay()
   displayExpr?: string | ((data: any) => string);
@@ -1278,7 +1274,7 @@ export class DataGridProps extends BaseWidgetProps implements Options {
 
   @OneWay() columnWidth?: number;
 
-  @OneWay() dataSource?: string | any[] | DataSource | DataSourceOptions;
+  @OneWay() dataSource?: any[] | DataSourceMixinString;
 
   @OneWay() dateSerializationFormat?: string;
 

@@ -2,7 +2,7 @@ import {
   Component, ComponentBindings, JSXComponent, OneWay, Event,
 } from '@devextreme-generator/declarations';
 /* eslint-disable import/named */
-import DataSource, { DataSourceOptions } from '../../data/data_source';
+import { ComplexCollectionDataSource } from '../../data/types';
 import { WidgetProps } from './common/widget';
 import LegacyList, { dxListItem } from '../../ui/list';
 import { DxElement } from '../../core/element';
@@ -37,7 +37,7 @@ export class ListProps extends WidgetProps {
 
   //   @OneWay() collapsibleGroups?: boolean;
 
-  @OneWay() dataSource?: string | (string | dxListItem | any)[] | DataSource | DataSourceOptions;
+  @OneWay() dataSource?: ComplexCollectionDataSource<dxListItem>;
 
   //   @OneWay() displayExpr?: string | ((item: any) => string);
 

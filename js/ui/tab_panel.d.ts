@@ -7,9 +7,9 @@ import {
     template
 } from '../core/templates/template';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    ComplexCollectionDataSource
+} from '../data/types';
 
 import {
     EventInfo,
@@ -92,7 +92,7 @@ export interface dxTabPanelOptions extends dxMultiViewOptions<dxTabPanel> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | dxTabPanelItem | any> | DataSource | DataSourceOptions;
+    dataSource?: ComplexCollectionDataSource<dxTabPanelItem>;
     /**
      * @docid
      * @default true

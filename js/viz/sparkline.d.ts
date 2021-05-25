@@ -5,9 +5,11 @@ import {
     ChangedOptionInfo
 } from '../events/index';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import DataSource from '../data/data_source';
+
+import {
+    DataSourceMixinString
+} from '../data/types';
 
 
 import {
@@ -82,7 +84,7 @@ export interface dxSparklineOptions extends BaseSparklineOptions<dxSparkline> {
      * @prevFileNamespace DevExpress.viz
      * @public
      */
-    dataSource?: Array<any> | DataSource | DataSourceOptions | string;
+    dataSource?: Array<any> | DataSourceMixinString;
     /**
      * @docid
      * @default '#666666'

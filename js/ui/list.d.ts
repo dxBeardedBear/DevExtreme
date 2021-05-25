@@ -11,9 +11,9 @@ import {
     DxPromise
 } from '../core/utils/deferred';
 
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    ComplexCollectionDataSource
+} from '../data/types';
 
 import {
     EventInfo,
@@ -158,7 +158,7 @@ export interface dxListOptions extends CollectionWidgetOptions<dxList>, SearchBo
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | dxListItem | any> | DataSource | DataSourceOptions;
+    dataSource?: ComplexCollectionDataSource<dxListItem>;
     /**
      * @docid
      * @default undefined

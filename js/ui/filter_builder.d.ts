@@ -7,11 +7,9 @@ import {
     template
 } from '../core/templates/template';
 
-import Store from '../data/abstract_store';
-
 import {
-    DataSourceOptions
-} from '../data/data_source';
+    DataSourceMixinArray
+} from '../data/types';
 
 import {
     Cancelable,
@@ -520,7 +518,7 @@ export interface dxFilterBuilderField {
        * @prevFileNamespace DevExpress.ui
        * @default undefined
        */
-      dataSource?: Array<any> | DataSourceOptions | Store,
+      dataSource?: DataSourceMixinArray,
       /**
        * @docid
        * @prevFileNamespace DevExpress.ui

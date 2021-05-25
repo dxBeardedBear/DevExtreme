@@ -1,6 +1,6 @@
-import DataSource, {
-    DataSourceOptions
-} from '../data/data_source';
+import {
+    ComplexCollectionDataSource
+} from '../data/types';
 
 import {
     EventInfo,
@@ -71,7 +71,7 @@ export interface dxTileViewOptions extends CollectionWidgetOptions<dxTileView> {
      * @prevFileNamespace DevExpress.ui
      * @public
      */
-    dataSource?: string | Array<string | dxTileViewItem | any> | DataSource | DataSourceOptions;
+    dataSource?: ComplexCollectionDataSource<dxTileViewItem>;
     /**
      * @docid
      * @type Enums.Orientation
