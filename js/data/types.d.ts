@@ -27,5 +27,6 @@ export type DataSourceMixinString = string | BaseMixinDataSource;
  * @docid
  * @prevFileNamespace DevExpress.data
  * @public
+ * @type Array<string | any> | DataSourceMixinString
  */
 export type ComplexCollectionDataSource<T> = Array<string | T | any> | DataSourceMixinString;

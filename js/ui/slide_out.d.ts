@@ -88,6 +88,7 @@ export interface dxSlideOutOptions extends CollectionWidgetOptions<dxSlideOut> {
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxSlideOutItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxSlideOutItem>;
     /**

@@ -65,6 +65,7 @@ export interface dxBoxOptions extends CollectionWidgetOptions<dxBox> {
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxBoxItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxBoxItem>;
     /**

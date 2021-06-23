@@ -70,6 +70,7 @@ export interface dxActionSheetOptions extends CollectionWidgetOptions<dxActionSh
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxActionSheetItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxActionSheetItem>;
     /**

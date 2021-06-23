@@ -60,6 +60,7 @@ export interface dxMultiViewOptions<TComponent> extends CollectionWidgetOptions<
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxMultiViewItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxMultiViewItem>;
     /**

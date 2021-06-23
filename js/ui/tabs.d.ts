@@ -53,6 +53,7 @@ export interface dxTabsOptions<TComponent> extends CollectionWidgetOptions<TComp
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxTabsItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxTabsItem>;
     /**

@@ -58,6 +58,7 @@ export interface dxToolbarOptions extends CollectionWidgetOptions<dxToolbar> {
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxToolbarItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxToolbarItem>;
     /**

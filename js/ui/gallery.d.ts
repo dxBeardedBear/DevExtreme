@@ -71,6 +71,7 @@ export interface dxGalleryOptions extends CollectionWidgetOptions<dxGallery> {
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxGalleryItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxGalleryItem>;
     /**

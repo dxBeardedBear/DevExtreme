@@ -91,6 +91,7 @@ export interface dxTabPanelOptions extends dxMultiViewOptions<dxTabPanel> {
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxTabPanelItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxTabPanelItem>;
     /**

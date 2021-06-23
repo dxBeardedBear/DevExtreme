@@ -84,6 +84,7 @@ export interface dxAccordionOptions extends CollectionWidgetOptions<dxAccordion>
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxAccordionItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxAccordionItem>;
     /**

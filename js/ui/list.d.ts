@@ -157,6 +157,7 @@ export interface dxListOptions extends CollectionWidgetOptions<dxList>, SearchBo
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxListItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxListItem>;
     /**

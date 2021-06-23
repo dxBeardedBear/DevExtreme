@@ -70,6 +70,7 @@ export interface dxTileViewOptions extends CollectionWidgetOptions<dxTileView> {
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxTileViewItem|any>|DataSourceMixinString
      */
     dataSource?: ComplexCollectionDataSource<dxTileViewItem>;
     /**

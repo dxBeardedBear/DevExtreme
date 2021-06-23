@@ -81,6 +81,7 @@ export interface dxResponsiveBoxOptions extends CollectionWidgetOptions<dxRespon
      * @default null
      * @prevFileNamespace DevExpress.ui
      * @public
+     * @type Array<string|dxResponsiveBoxItem|any>|DataSourceMixinString
      */
     dataSource?:  ComplexCollectionDataSource<dxResponsiveBoxItem>;
     /**
